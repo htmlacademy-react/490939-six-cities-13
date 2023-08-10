@@ -6,28 +6,31 @@ import Login from './pages/Login';
 import Offer from './pages/Offer';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './components/PrivateRoute';
+import {offerData} from './mocks/offers.ts';
+import Layout from './components/Layout';
 
 
 type AppProps = {
-  count: number;
+  offers: offerData[];
 };
 
-
-const App: React.FC <AppProps> = ({count}) => (
+const App: React.FC <AppProps> = ({ offers}) => (
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Main count={count} />} />
-      <Route
-        path='favorites'
-        element={
-          <PrivateRoute isAuthorizedUser={false}>
-            <Favorites />
-          </PrivateRoute>
-        }
-      />
-      <Route path='login' element={<Login />} />
-      <Route path='offer/:id' element={<Offer />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Main offers={offers} />} />
+        <Route
+          path='favorites'
+          element={
+            <PrivateRoute isAuthorizedUser>
+              <Favorites offers={offers} />
+            </PrivateRoute>
+          }
+        />
+        <Route path='login' element={<Login />} />
+        <Route path='offer/:id' element={<Offer offer={offers[1]} />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 );
