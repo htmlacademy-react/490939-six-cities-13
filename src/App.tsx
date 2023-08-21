@@ -6,19 +6,20 @@ import Login from './pages/Login';
 import Offer from './pages/Offer';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './components/PrivateRoute';
-import {offerData} from './mocks/offers.ts';
+import {TOffer} from './mocks/offers.ts';
 import Layout from './components/Layout';
+import {CITY} from './mocks/city.ts';
 
 
-type AppProps = {
-  offers: offerData[];
+type TAppProps = {
+  offers: TOffer[];
 };
 
-const App: React.FC <AppProps> = ({ offers}) => (
+const App: React.FC <TAppProps> = ({ offers}) => (
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route index element={<Main offers={offers} />} />
+        <Route index element={<Main offers={offers} city={CITY} />} />
         <Route
           path='favorites'
           element={
