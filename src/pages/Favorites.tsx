@@ -1,9 +1,9 @@
 import React from 'react';
-import {offerData} from '../mocks/offers.ts';
+import {TOffer} from '../mocks/offers.ts';
 import FavoriteOffer from '../components/FavoriteOffer';
 
 type FavoritesProps = {
-    offers: offerData[];
+    offers: TOffer[];
 }
 const Favorites: React.FC<FavoritesProps> = ({offers}) => (
   <>

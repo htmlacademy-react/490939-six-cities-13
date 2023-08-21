@@ -1,9 +1,9 @@
 import React from 'react';
-import {offerData} from '../mocks/offers.ts';
-import CommentForm from "../components/CommentForm";
+import {TOffer} from '../mocks/offers.ts';
+import CommentForm from '../components/CommentForm';
 
 type OfferProps = {
-  offer: offerData;
+  offer: TOffer;
 };
 
 
@@ -84,9 +84,8 @@ const Offer: React.FC<OfferProps> = ({offer}) => (
               <span className="offer__user-status">{offer.hostStatus}</span>
             </div>
             <div className="offer__description">
-              {offer.text.map((x, i) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <p key={`${offer.id }${ i}`} className="offer__text">{x}</p>
+              {offer.text.map((x) => (
+                <p key={offer.id} className="offer__text">{x}</p>
               ))}
             </div>
           </div>

@@ -1,8 +1,8 @@
 import React from 'react';
-import {offerData} from '../../mocks/offers.ts';
+import {TOffer} from '../../mocks/offers.ts';
 
 export type FavoriteOfferProps = {
-  offer: offerData;
+  offer: TOffer;
 };
 
 const FavoriteOffer: React.FC<FavoriteOfferProps> = ({offer}) => (

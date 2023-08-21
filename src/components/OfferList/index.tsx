@@ -1,18 +1,25 @@
 import React from 'react';
 import Card from '../Card';
-import {offerData} from '../../mocks/offers.ts';
+import {TOffer} from '../../mocks/offers.ts';
 
 type OfferListProps = {
-  offers: offerData[];
+    offers: TOffer[];
+    onOfferHover: (id: number) => void;
 }
 
-const OfferList: React.FC<OfferListProps> = ({offers}) => (
-  <div className="cities__places-list places__list tabs__content">
-    {offers.map((offer) => (
-      <Card key={offer.id} offer={offer} />
-    ))}
-  </div>
-);
+const OfferList: React.FC<OfferListProps> = ({offers, onOfferHover}) => {
+  return (
+    <div className="cities__places-list places__list tabs__content">
+      {offers.map((offer) => (
+        <Card
+          key={offer.id}
+          offer={offer}
+          onOfferHover={onOfferHover}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default OfferList;
 

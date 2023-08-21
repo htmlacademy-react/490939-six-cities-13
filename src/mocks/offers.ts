@@ -1,4 +1,4 @@
-type reviewData = {
+type TReview = {
   'avatar': string;
   'name': string;
   'rating': number;
@@ -6,7 +6,7 @@ type reviewData = {
   'date': string;
 }
 
-type offerData = {
+type TOffer = {
   'id': number;
   'images': string[];
   'class': string;
@@ -22,12 +22,16 @@ type offerData = {
   'hostName': string;
   'hostStatus': string;
   'text': string[];
-  'reviews': reviewData[];
+  'reviews': TReview[];
+  'lat': number;
+  'lng': number;
 }
 
-const offers: offerData[] = [
+const offers: TOffer[] = [
   {
     'id': 1,
+    'lat': 52.3909553943508,
+    'lng': 4.85309666406198,
     'images': [
       'room.jpg',
       'apartment-01.jpg',
@@ -74,6 +78,8 @@ const offers: offerData[] = [
   },
   {
     'id': 2,
+    'lat': 52.3609553943508,
+    'lng': 4.85309666406198,
     'images': [
       'room.jpg',
       'apartment-01.jpg',
@@ -115,6 +121,8 @@ const offers: offerData[] = [
   },
   {
     'id': 3,
+    'lat': 52.3909553943508,
+    'lng': 4.929309666406198,
     'images': [
       'room.jpg',
       'apartment-01.jpg',
@@ -161,6 +169,8 @@ const offers: offerData[] = [
   },
   {
     'id': 4,
+    'lat': 52.3809553943508,
+    'lng': 4.939309666406198,
     'images': [
       'room.jpg',
       'apartment-01.jpg',
@@ -207,5 +217,5 @@ const offers: offerData[] = [
   },
 ];
 
-export type { offerData, reviewData };
+export type { TOffer, TReview };
 export default offers;
