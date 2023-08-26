@@ -1,4 +1,5 @@
 type TReview = {
+  'id': string;
   'avatar': string;
   'name': string;
   'rating': number;
@@ -68,11 +69,20 @@ const offers: TOffer[] = [
     ],
     'reviews': [
       {
+        'id': '1',
         'avatar': 'avatar-max.jpg',
         'name': 'Max',
         'rating': 4,
         'text': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
         'date': '2019-04-24'
+      },
+      {
+        'id': '2',
+        'avatar': 'avatar-max.jpg',
+        'name': 'Max',
+        'rating': 5,
+        'text': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+        'date': '2019-02-22'
       }
     ]
   },
@@ -111,6 +121,7 @@ const offers: TOffer[] = [
     ],
     'reviews': [
       {
+        'id': '1',
         'avatar': 'avatar-max.jpg',
         'name': 'Andy',
         'rating': 3,
@@ -159,6 +170,7 @@ const offers: TOffer[] = [
     ],
     'reviews': [
       {
+        'id': '1',
         'avatar': 'avatar-max.jpg',
         'name': 'Max',
         'rating': 4,
@@ -207,6 +219,7 @@ const offers: TOffer[] = [
     ],
     'reviews': [
       {
+        'id': '1',
         'avatar': 'avatar-max.jpg',
         'name': 'Max',
         'rating': 5,
@@ -217,5 +230,5 @@ const offers: TOffer[] = [
   },
 ];
 
-export type { TOffer, TReview };
+export type {TOffer, TReview};
 export default offers;

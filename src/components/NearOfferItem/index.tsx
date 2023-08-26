@@ -2,12 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {TOffer} from '../../mocks/offers.ts';
 
-type CardProps = {
+
+type NearOfferItemProps = {
   offer: TOffer;
   onOfferHover: (id: number) => void;
 }
-
-const Card: React.FC<CardProps> = ({offer, onOfferHover}) => {
+const NearOfferItem: React.FC<NearOfferItemProps> = ({offer, onOfferHover}) => {
   const handleOfferHover = () => {
     onOfferHover(offer.id);
   };
@@ -16,15 +16,9 @@ const Card: React.FC<CardProps> = ({offer, onOfferHover}) => {
     <Link
       to="offer/{offer.id}"
     >
-      <article
-        className="cities__card place-card"
-        onMouseEnter={handleOfferHover}
-      >
-        <div className="place-card__mark">
-          <span>{offer.class}</span>
-        </div>
-        <div className="cities__image-wrapper place-card__image-wrapper">
-          <span>
+      <article className="near-places__card place-card" onMouseEnter={handleOfferHover}>
+        <div className="near-places__image-wrapper place-card__image-wrapper">
+          <a href="#">
             <img
               className="place-card__image"
               src={`img/${offer.images[0]}`}
@@ -32,7 +26,7 @@ const Card: React.FC<CardProps> = ({offer, onOfferHover}) => {
               height={200}
               alt="Place image"
             />
-          </span>
+          </a>
         </div>
         <div className="place-card__info">
           <div className="place-card__price-wrapper">
@@ -41,7 +35,7 @@ const Card: React.FC<CardProps> = ({offer, onOfferHover}) => {
               <span className="place-card__price-text">/&nbsp;night</span>
             </div>
             <button
-              className="place-card__bookmark-button button"
+              className="place-card__bookmark-button place-card__bookmark-button--active button"
               type="button"
             >
               <svg
@@ -51,7 +45,7 @@ const Card: React.FC<CardProps> = ({offer, onOfferHover}) => {
               >
                 <use xlinkHref="#icon-bookmark"/>
               </svg>
-              <span className="visually-hidden">To bookmarks</span>
+              <span className="visually-hidden">In bookmarks</span>
             </button>
           </div>
           <div className="place-card__rating rating">
@@ -72,4 +66,4 @@ const Card: React.FC<CardProps> = ({offer, onOfferHover}) => {
   );
 };
 
-export default Card;
+export default NearOfferItem;
