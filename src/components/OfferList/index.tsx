@@ -3,8 +3,8 @@ import Card from '../Card';
 import {TOffer} from '../../mocks/offers.ts';
 
 type OfferListProps = {
-    offers: TOffer[];
-    onOfferHover: (id: number) => void;
+  offers: TOffer[];
+  onOfferHover: (id: number) => void;
 }
 
 const OfferList: React.FC<OfferListProps> = ({offers, onOfferHover}) => {

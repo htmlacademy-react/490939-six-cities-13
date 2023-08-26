@@ -9,6 +9,7 @@ type MapProps = {
   city: TCity;
   offers: TOffer[];
   selectedOffer: TOffer | undefined;
+  height: number;
 };
 
 const defaultCustomIcon = new Icon({
@@ -24,7 +25,7 @@ const currentCustomIcon = new Icon({
 });
 
 
-const Map: React.FC<MapProps> = ({city, offers, selectedOffer}) => {
+const Map: React.FC<MapProps> = ({city, offers, selectedOffer, height}) => {
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
 
@@ -51,8 +52,7 @@ const Map: React.FC<MapProps> = ({city, offers, selectedOffer}) => {
       };
     }
   }, [map, offers, selectedOffer]);
-
-  return <div style={{height: '500px'}} ref={mapRef}></div>;
+  return <div style={{height: `${height}px`}} ref={mapRef}></div>;
 };
 
 export default Map;
