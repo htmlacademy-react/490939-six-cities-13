@@ -8,6 +8,7 @@ type OfferListProps = {
 }
 
 const OfferList: React.FC<OfferListProps> = ({offers, onOfferHover}) => {
+
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) => (

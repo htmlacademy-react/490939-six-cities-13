@@ -9,7 +9,6 @@ import PrivateRoute from './components/PrivateRoute';
 import {TOffer} from './mocks/offers.ts';
 import {CITY} from './mocks/city.ts';
 
-
 type TAppProps = {
   offers: TOffer[];
 };
