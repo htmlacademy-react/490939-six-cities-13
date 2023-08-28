@@ -6,6 +6,7 @@ import {TCity} from '../types/types.ts';
 import Header from '../components/Header';
 import CityList from '../components/CityList';
 import {useAppSelector} from '../store/hooks.ts';
+import Sort from "../components/Sort";
 
 type MainProps = {
   offers: TOffer[];
@@ -37,27 +38,7 @@ const Main: React.FC<MainProps> = ({offers, city,}) => {
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
               <b className="places__found">{actualOffers.length} places to stay in {selectedCity}</b>
-              <form className="places__sorting" action="#" method="get">
-                <span className="places__sorting-caption">Sort by</span>
-                <span className="places__sorting-type" tabIndex={0}>Popular</span>
-                <ul className="places__options places__options--custom places__options--opened">
-                  <li
-                    className="places__option places__option--active"
-                    tabIndex={0}
-                  >
-                    Popular
-                  </li>
-                  <li className="places__option" tabIndex={0}>
-                    Price: low to high
-                  </li>
-                  <li className="places__option" tabIndex={0}>
-                    Price: high to low
-                  </li>
-                  <li className="places__option" tabIndex={0}>
-                    Top rated first
-                  </li>
-                </ul>
-              </form>
+              <Sort></Sort>
               <OfferList offers={actualOffers} onOfferHover={handleOfferHover}/>
             </section>
             <div className="cities__right-section">
